@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sanjay Gauswami — Graphic Designer, Web Developer & Digital Marketer">
+<meta property="og:title" content="Sanjay Gauswami | Portfolio 2024">
+<meta property="og:description" content="Designer · Developer · Creator">
+<title>Sanjay Gauswami — Portfolio 2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --orange:#FF6B35;
+    --dark:#1a1a1a;
+    --cream:#faf8f4;
+    --cyan:#00c9c8;
+    --yellow:#FFE156;
+    --white:#fff;
+    --grid-color:rgba(0,0,0,0.08);
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--dark);overflow-x:hidden;cursor:none;}
+
+  /* CUSTOM CURSOR */
+  .cursor{position:fixed;width:18px;height:18px;border:2px solid var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference;}
+  .cursor-dot{position:fixed;width:6px;height:6px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+  body:hover .cursor{opacity:1;}
+
+  /* NAV DOTS */
+  .nav-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:100;}
+  .nav-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;outline:none;}
+  .nav-dot.active,.nav-dot:hover{background:var(--orange);transform:scale(1.5);}
+
+  /* HERO */
+  .hero{
+    background-color:var(--cream);
+    background-image:linear-gradient(var(--grid-color) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);
+    background-size:32px 32px;
+    min-height:100vh;position:relative;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;padding:80px 20px 140px;overflow:hidden;
+  }
+  .splat{position:absolute;pointer-events:none;background:var(--orange);}
+  .s1{top:-40px;left:-40px;width:160px;height:160px;opacity:.85;border-radius:60% 40% 70% 30%/50% 60% 40% 70%;animation:wobble 7s ease-in-out infinite;}
+  .s2{bottom:80px;right:-30px;width:120px;height:120px;opacity:.7;border-radius:40% 60% 30% 70%/60% 40% 70% 30%;animation:wobble 9s ease-in-out infinite reverse;}
+  .s3{top:30%;left:5%;width:60px;height:60px;opacity:.4;border-radius:60% 40% 70% 30%/50% 60% 40% 70%;animation:wobble 6s ease-in-out infinite 2s;}
+  @keyframes wobble{0%,100%{border-radius:60% 40% 70% 30%/50% 60% 40% 70%;transform:rotate(0deg);}50%{border-radius:30% 70% 40% 60%/70% 30% 60% 40%;transform:rotate(10deg);}}
+
+  .deco-star{position:absolute;pointer-events:none;}
+  .d1{top:60px;right:13%;font-size:2rem;color:var(--dark);animation:spin 12s linear infinite;display:inline-block;}
+  .d2{top:28%;left:9%;font-size:1.4rem;color:var(--dark);animation:spin 8s linear infinite reverse;display:inline-block;}
+  .d3{bottom:130px;left:20%;font-size:1.8rem;color:var(--orange);animation:spin 10s linear infinite;display:inline-block;}
+  .d4{top:12%;left:32%;font-size:1rem;color:var(--dark);animation:twink 3s ease-in-out infinite;}
+  .d5{top:48%;right:6%;font-size:1.1rem;color:var(--orange);animation:twink 2.5s ease-in-out infinite 1s;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes twink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.2;transform:scale(.6);}}
+
+  .hero-year{font-family:'Caveat',cursive;font-size:2.4rem;color:var(--dark);font-weight:700;margin-bottom:-8px;animation:fadeDown .7s ease both;position:relative;display:inline-block;}
+  .hero-year::after{content:'';position:absolute;bottom:4px;left:-6px;right:-6px;height:2.5px;background:var(--dark);border-radius:2px;}
+  .hero-title{font-family:'Abril Fatface',serif;font-size:clamp(4rem,15vw,9.5rem);color:var(--dark);line-height:.92;letter-spacing:-3px;animation:fadeDown .7s ease .1s both;display:flex;align-items:center;flex-wrap:wrap;justify-content:center;}
+  .eo{font-size:.82em;vertical-align:middle;display:inline-block;position:relative;top:-4px;}
+  .hero-sub{margin-top:24px;font-size:.95rem;letter-spacing:.14em;color:var(--dark);opacity:.6;text-transform:uppercase;font-weight:500;animation:fadeDown .7s ease .2s both;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+
+  /* TORN PAPER */
+  .torn{position:absolute;bottom:-2px;left:0;right:0;height:90px;overflow:hidden;line-height:0;}
+  .torn svg{width:100%;height:90px;}
+
+  /* DARK BODY */
+  .dark-body{background:var(--dark);padding:80px 6% 60px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;max-width:920px;margin:0 auto 80px;align-items:center;}
+  .polaroid{position:relative;max-width:240px;width:100%;}
+  .polaroid-wrap{background:#fff;padding:12px 12px 48px;box-shadow:8px 10px 40px rgba(0,0,0,.6);transform:rotate(-3.5deg);position:relative;transition:transform .35s ease;}
+  .polaroid-wrap:hover{transform:rotate(0deg) scale(1.04);}
+  .photo-box{width:100%;padding-top:100%;background:linear-gradient(135deg,var(--cyan),#0099a8);position:relative;overflow:hidden;}
+  .photo-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5.5rem;}
+  .pname{font-family:'Caveat',cursive;font-size:1.3rem;color:#111;text-align:center;margin-top:10px;font-weight:700;}
+  .sticker{position:absolute;pointer-events:none;font-size:2rem;filter:drop-shadow(2px 2px 5px rgba(0,0,0,.3));}
+  .st1{top:-18px;left:-18px;transform:rotate(-12deg);font-size:2.2rem;}
+  .st2{bottom:34px;right:-16px;transform:rotate(15deg);font-size:2.5rem;}
+  .st3{bottom:-12px;left:8px;transform:rotate(-5deg);}
+  .tape{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-2deg);width:64px;height:24px;background:rgba(255,225,86,.7);border-radius:2px;}
+
+  .hello{font-family:'Caveat',cursive;font-size:3.8rem;color:var(--white);font-weight:700;margin-bottom:14px;}
+  .bio{font-size:.97rem;line-height:1.8;color:rgba(255,255,255,.72);margin-bottom:28px;}
+  strong.name{color:var(--white);}
+  .contact-head{font-family:'Caveat',cursive;font-size:2rem;color:var(--white);margin-bottom:14px;display:inline-block;position:relative;}
+  .contact-head::after{content:'';position:absolute;bottom:3px;left:0;right:0;height:3px;background:var(--orange);border-radius:2px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .ci{display:flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(255,255,255,.78);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;text-decoration:none;transition:all .25s;}
+  .ci:hover{background:rgba(255,107,53,.15);border-color:var(--orange);color:var(--white);transform:translateY(-2px);}
+  .ci .icon{font-size:1.2rem;flex-shrink:0;}
+
+  /* DIVIDER */
+  .divider{border:none;border-top:1px solid rgba(255,255,255,.07);max-width:920px;margin:0 auto 60px;}
+
+  /* SECTION HEADING */
+  .sh{font-family:'Caveat',cursive;font-size:2.8rem;font-weight:700;color:var(--white);margin-bottom:26px;display:inline-block;position:relative;}
+  .sh .acc{color:var(--orange);}
+  .sh::before{content:attr(data-n);position:absolute;top:-13px;left:-4px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-family:'DM Sans',sans-serif;font-weight:700;}
+
+  /* EDU + EXP */
+  .ee-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;max-width:920px;margin:0 auto 70px;}
+  .edu-item{margin-bottom:22px;}
+  .yr{font-size:.74rem;letter-spacing:.1em;color:var(--orange);text-transform:uppercase;font-weight:700;margin-bottom:3px;}
+  .school{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:3px;}
+  .deg{font-size:.84rem;color:rgba(255,255,255,.5);font-style:italic;}
+  .exp-item{margin-bottom:26px;padding-left:20px;border-left:2px solid rgba(255,107,53,.3);position:relative;transition:border-color .3s;}
+  .exp-item:hover{border-color:var(--orange);}
+  .exp-item::before{content:'';position:absolute;left:-7px;top:7px;width:12px;height:12px;background:var(--orange);border-radius:50%;}
+  .company{font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:2px;}
+  .role{font-size:.8rem;color:var(--cyan);font-style:italic;margin-bottom:4px;}
+  .desc{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.6;}
+
+  /* SOFTWARE */
+  .sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:920px;margin:0 auto 50px;}
+  .sw-icons{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;}
+  .sw-ic{display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .sw-b{width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;font-family:'DM Sans',sans-serif;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px rgba(0,0,0,.4);position:relative;overflow:hidden;color:#fff;text-decoration:none;}
+  .sw-b::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 60%);}
+  .sw-b:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 12px 28px rgba(0,0,0,.55);}
+  .sw-lbl{font-size:.64rem;color:rgba(255,255,255,.5);text-align:center;}
+  .ps{background:linear-gradient(135deg,#001e36,#31a8ff);}
+  .ai{background:linear-gradient(135deg,#2d1a00,#ff9a00);}
+  .pr{background:linear-gradient(135deg,#14002c,#9999ff);}
+  .ae{background:linear-gradient(135deg,#060042,#9999ff);}
+  .cv{background:linear-gradient(135deg,#7c2ff8,#00c4cc);}
+  .fg{background:linear-gradient(135deg,#1e1e1e,#f24e1e);}
+  .vs{background:linear-gradient(135deg,#1a1a2e,#007acc);}
+
+  /* PILLS */
+  .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px;}
+  .pill{padding:7px 16px;border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;transition:all .2s;letter-spacing:.03em;cursor:default;}
+  .pill:hover{transform:scale(1.06);}
+  .po{border-color:var(--orange);color:var(--orange);}
+  .pc{border-color:var(--cyan);color:var(--cyan);}
+  .py{border-color:var(--yellow);color:var(--yellow);}
+  .pw{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7);}
+  .sp{padding:8px 18px;border-radius:999px;font-size:.8rem;font-weight:500;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75);transition:all .25s;font-style:italic;cursor:default;}
+  .sp:hover{background:rgba(255,107,53,.14);border-color:var(--orange);color:var(--white);transform:translateY(-2px);}
+
+  /* FOOTER */
+  footer{text-align:center;padding:40px 20px 34px;border-top:1px solid rgba(255,255,255,.07);max-width:920px;margin:0 auto;}
+  .fn{font-family:'Abril Fatface',serif;font-size:2.2rem;color:var(--white);letter-spacing:1px;}
+  .fn span{color:var(--orange);}
+  .fs{margin-top:8px;font-size:.76rem;color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* RESPONSIVE */
+  @media(max-width:760px){
+    .about-grid,.ee-grid,.sw-grid{grid-template-columns:1fr;gap:40px;}
+    .polaroid{max-width:200px;margin:0 auto;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-dots{display:none;}
+    body{cursor:auto;}
+    .cursor,.cursor-dot{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-dot" id="curdot"></div>
+
+<!-- Nav dots -->
+<nav class="nav-dots" aria-label="Section navigation">
+  <button class="nav-dot active" id="dot0" title="Home"></button>
+  <button class="nav-dot" id="dot1" title="About"></button>
+  <button class="nav-dot" id="dot2" title="Education"></button>
+  <button class="nav-dot" id="dot3" title="Software"></button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="section-hero">
+  <div class="splat s1"></div>
+  <div class="splat s2"></div>
+  <div class="splat s3"></div>
+  <div class="deco-star d1">✦</div>
+  <div class="deco-star d2">✶</div>
+  <div class="deco-star d3">★</div>
+  <div class="deco-star d4">✦</div>
+  <div class="deco-star d5">✦</div>
+
+  <div class="hero-year">2024</div>
+  <h1 class="hero-title">
+    P<span class="eo">😊</span>rtf<span class="eo">🅾</span>li<span class="eo">⭕</span>
+  </h1>
+  <p class="hero-sub">Graphic Design ✦ Digital Art ✦ Print Media</p>
+
+  <div class="torn">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,55 C40,72 75,28 125,50 C165,67 205,82 255,60 C305,38 330,76 385,54 C425,36 465,74 515,60 C565,46 592,80 645,62 C698,44 722,80 775,58 C818,38 854,70 905,50 C950,32 982,72 1035,52 C1080,34 1115,68 1162,50 C1208,33 1248,74 1295,55 C1342,36 1392,70 1440,52 L1440,0 Z" fill="#faf8f4"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== DARK BODY ===== -->
+<div class="dark-body">
+
+  <!-- ABOUT -->
+  <div class="about-grid reveal" id="section-about">
+    <div>
+      <div class="polaroid">
+        <div class="tape"></div>
+        <div class="polaroid-wrap">
+          <div class="photo-box">
+            <div class="photo-inner">🧑‍💻</div>
+          </div>
+          <div class="pname">Sanjay Gauswami</div>
+        </div>
+        <div class="sticker st1">👽</div>
+        <div class="sticker st2">⚡</div>
+        <div class="sticker st3">✨</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="hello">Hello! 👋</div>
+      <p class="bio">
+        Hi, I'm <strong class="name">Sanjay Gauswami</strong> — a multi-skilled designer &amp; developer based in India.
+        I blend creative design thinking with solid coding skills to build digital experiences that look great
+        and work beautifully. From branding to full-stack web, I craft it all.
+      </p>
+      <div class="contact-head">Contact</div>
+      <div class="contact-grid">
+        <a class="ci" href="tel:8799153676"><span class="icon">📞</span> 8799153676</a>
+        <a class="ci" href="mailto:gauswami916@gmail.com"><span class="icon">✉️</span> gauswami916@gmail.com</a>
+        <a class="ci" href="https://instagram.com/sanjayyy.66" target="_blank" rel="noopener"><span class="icon">📸</span> @sanjayyy.66</a>
+        <a class="ci" href="#"><span class="icon">🌐</span> @sanjay</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EDUCATION + EXPERIENCE -->
+  <div class="ee-grid reveal" id="section-edu">
+    <div>
+      <div class="sh" data-n="01">Edu<span class="acc">c</span>ation</div>
+      <div class="edu-item">
+        <div class="yr">2020 – 2024</div>
+        <div class="school">Computer Science &amp; Engineering</div>
+        <div class="deg">Bachelor of Technology</div>
+      </div>
+      <div class="edu-item">
+        <div class="yr">Ongoing</div>
+        <div class="school">Self-Taught Creator</div>
+        <div class="deg">Design · Web Dev · Digital Marketing</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sh" data-n="02">Ex<span class="acc">p</span>erience</div>
+      <div class="exp-item">
+        <div class="yr">2022 – 2023</div>
+        <div class="company">Digital Marketing Agency</div>
+        <div class="role">Creative Graphic Designer</div>
+        <div class="desc">Designed artworks for social media, reels, and branding campaigns across hotels, cafes, gyms and more.</div>
+      </div>
+      <div class="exp-item">
+        <div class="yr">2023 – 2024</div>
+        <div class="company">Freelance Web Designer</div>
+        <div class="role">UI/UX &amp; Front-End Developer</div>
+        <div class="desc">Built responsive websites and landing pages using HTML, CSS, JavaScript for local businesses.</div>
+      </div>
+      <div class="exp-item">
+        <div class="yr">2024 – Present</div>
+        <div class="company">Independent Creative Studio</div>
+        <div class="role">Full-Stack Creative Developer</div>
+        <div class="desc">Branding, web development, and digital marketing — end-to-end creative solutions.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SOFTWARE + LANGUAGES + SKILLS -->
+  <div class="sw-grid reveal" id="section-sw">
+    <div>
+      <div class="sh" data-n="03">S<span class="acc">o</span>ftware</div>
+      <div class="sw-icons">
+        <div class="sw-ic"><div class="sw-b ps">Ps</div><div class="sw-lbl">Photoshop</div></div>
+        <div class="sw-ic"><div class="sw-b ai">Ai</div><div class="sw-lbl">Illustrator</div></div>
+        <div class="sw-ic"><div class="sw-b pr">Pr</div><div class="sw-lbl">Premiere</div></div>
+        <div class="sw-ic"><div class="sw-b ae">Ae</div><div class="sw-lbl">After Effects</div></div>
+        <div class="sw-ic"><div class="sw-b cv">Cv</div><div class="sw-lbl">Canva</div></div>
+        <div class="sw-ic"><div class="sw-b fg">Fg</div><div class="sw-lbl">Figma</div></div>
+        <div class="sw-ic"><div class="sw-b vs">VS</div><div class="sw-lbl">VS Code</div></div>
+      </div>
+
+      <div style="margin-top:36px">
+        <div class="sh" data-n="05">D<span class="acc">o</span>mains</div>
+        <div class="pills">
+          <span class="pill po">Graphic Design</span>
+          <span class="pill pc">Digital Marketing</span>
+          <span class="pill py">Web Design</span>
+          <span class="pill pw">Web Development</span>
+          <span class="pill po">Coding</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sh" data-n="04">Lan<span class="acc">g</span>uages</div>
+      <div class="pills">
+        <span class="pill po">C</span>
+        <span class="pill po">C++</span>
+        <span class="pill pc">Python</span>
+        <span class="pill py">Java</span>
+        <span class="pill py">JavaScript</span>
+        <span class="pill pc">SQL</span>
+        <span class="pill pw">HTML / CSS</span>
+      </div>
+
+      <div style="margin-top:36px">
+        <div class="sh" data-n="06">S<span class="acc">k</span>ills</div>
+        <div class="pills">
+          <span class="sp">Adaptable</span>
+          <span class="sp">Communication</span>
+          <span class="sp">Desire to Learn</span>
+          <span class="sp">Positive Attitude</span>
+          <span class="sp">Teamwork</span>
+          <span class="sp">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="fn">Sanjay <span>G</span>auswami</div>
+    <div class="fs">Designer · Developer · Creator &nbsp;·&nbsp; © 2024</div>
+  </footer>
+
+</div><!-- end dark-body -->
+
+<script>
+  /* ── Custom cursor ── */
+  const cur = document.getElementById('cur');
+  const dot = document.getElementById('curdot');
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  });
+  (function animCursor() {
+    cx += (mx - cx) * 0.15;
+    cy += (my - cy) * 0.15;
+    cur.style.left = cx + 'px';
+    cur.style.top  = cy + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+
+  /* ── Nav dot scroll ── */
+  const sections = [
+    document.getElementById('section-hero'),
+    document.getElementById('section-about'),
+    document.getElementById('section-edu'),
+    document.getElementById('section-sw')
+  ];
+  const navDots = [
+    document.getElementById('dot0'),
+    document.getElementById('dot1'),
+    document.getElementById('dot2'),
+    document.getElementById('dot3')
+  ];
+  navDots.forEach((d, i) => {
+    d.addEventListener('click', () => sections[i].scrollIntoView({ behavior: 'smooth' }));
+  });
+  window.addEventListener('scroll', () => {
+    const mid = window.scrollY + window.innerHeight / 2;
+    let active = 0;
+    sections.forEach((s, i) => { if (s && s.offsetTop <= mid) active = i; });
+    navDots.forEach((d, i) => d.classList.toggle('active', i === active));
+  });
+
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
